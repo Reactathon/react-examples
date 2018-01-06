@@ -1,22 +1,48 @@
 import React, {Component} from 'react';
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import createStore from './store/createStore'
 
 import Landing from './components/Landing/Landing.js'
 import Header from './components/Header/Header'
 
+import About from './components/About/About'
 import SignIn from './components/SignIn/SignIn'
+import Register from './components/Register/Register'
+import PageNotFound from './components/PageNotFound/PageNotFound'
 import Profile from './components/Profile/Profile'
 
+import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
+import AccountInformation from './components/AccountInformation/AccountInformation'
+
 import './App.css';
+
+const store = createStore()
 
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <Header/>
-                </header>
-                <Landing />
-            </div>
+            <Provider store={store}>
+                <Router>
+                    <div className="App">
+                        <header className="App-header">
+                            <Header/>
+                        </header>
+                        <Switch>
+                            <Route path="/about" component={About} />
+                            <Route path="/" exact component={Landing} />
+                            <Route path="/profile/:id" component={Profile} />
+                            <Route path="/signin" component={SignIn} />
+                            <AuthenticatedRoute path="/account-information" component={AccountInformation} />
+                            <Route component={PageNotFound} />
+                        </Switch>
+                    </div>
+                </Router>
+            </Provider>
         );
     }
 }

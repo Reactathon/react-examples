@@ -1,4 +1,7 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import { loginUser } from '../../actions/userActions'
+
 
 import './SignIn.css'
 
@@ -27,8 +30,7 @@ class SignIn extends Component {
 
     handleSignIn() {
         const {userName, password} = this.state
-        // TODO: Sign User In
-        console.log(`Signing user in with userName ${userName} and password ${password}`)
+        this.props.login(userName, password)
         this.setState({
             userName: '',
             password: ''
@@ -48,4 +50,10 @@ class SignIn extends Component {
 
 }
 
-export default SignIn
+const mapDispatchToProps = dispatch => {
+    return {
+        login: (userName, password) => dispatch(loginUser(userName, password))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(SignIn)
