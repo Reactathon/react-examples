@@ -10,3 +10,7 @@
 .nav-items {
     padding-left: 10px;
 }
+
+a, a:visited {
+    color: white !important;
+}
