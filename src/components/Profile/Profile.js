@@ -5,10 +5,6 @@ import { connect } from 'react-redux'
 
 class Profile extends Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         const id = this.props.match.params.id
         console.log(`The profile id is ${id}`)

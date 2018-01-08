@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import Typography from 'material-ui/Typography'
+import Paper from 'material-ui/Paper'
+import Button from 'material-ui/Button'
+import TextField from 'material-ui/TextField'
 
 import {loginUser} from '../../actions/userActions'
 import {isAuthenticated, loginError} from '../../reducers/userReducer'
@@ -69,14 +72,14 @@ class SignIn extends Component {
         }
 
         return (
-            <div className="signin-container">
+            <Paper className="signin-container">
                 <h1>Sign In</h1>
                 {this.renderError(error)}
-                <span>User Name: <input value={this.state.userName} onChange={this.handleUserNameChange} type="input"/></span>
-                <span>Password:  <input value={this.state.password} onChange={this.handlePasswordChange}
-                                        type="password"/></span>
-                <button onClick={this.handleSignIn}>Sign In</button>
-            </div>
+                <TextField label='User Name' value={this.state.userName} onChange={this.handleUserNameChange} type="input"/>
+                <TextField label='Password' value={this.state.password} onChange={this.handlePasswordChange}
+                                        type="password"/>
+                <Button onClick={this.handleSignIn}>Sign In</Button>
+            </Paper>
         )
     }
 

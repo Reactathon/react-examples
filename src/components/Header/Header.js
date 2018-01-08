@@ -74,21 +74,16 @@ class Header extends Component {
                     <Typography type="title" color="inherit" className={classes.flex}>
                         Demo
                     </Typography>
+                    <Button color="contrast"><Link to="/register">Register</Link></Button>
                     {this.renderSignInOutButtons()}
                 </Toolbar>
             </AppBar>
             <Drawer open={this.state.open}>
                 <MenuItem><img width={200} alt="logo"
-                               src="https://www.biosymetrics.com/wp-content/uploads/2017/02/biosymetricsLogo.png"/></MenuItem>
+                               src="https://www.jonahgroup.com/wp-content/themes/v4/images/jonah_logo.png"/></MenuItem>
                 <Link className="nav-items" to="/"><MenuItem onClick={this.toggleDrawer}>Home</MenuItem></Link>
-                <Link className="nav-items" to="/dataflow"> <MenuItem onClick={this.toggleDrawer}>Data
-                    Flow</MenuItem></Link>
-                <Link className="nav-items" to="/dashboard"><MenuItem
-                    onClick={this.toggleDrawer}>Dashboard</MenuItem></Link>
-                <Link className="nav-items" to="/monitoring"><MenuItem onClick={this.toggleDrawer}>Monitoring</MenuItem></Link>
-                <Link className="nav-items" to="/plottly"><MenuItem
-                    onClick={this.toggleDrawer}>Plottly</MenuItem></Link>
-                <Link className="nav-items" to="/code"><MenuItem onClick={this.toggleDrawer}>Code</MenuItem></Link>
+                <Link className="nav-items" to="/list"><MenuItem onClick={this.toggleDrawer}>Todo List</MenuItem></Link>
+                <Link className="nav-items" to="/weather"><MenuItem onClick={this.toggleDrawer}>Weather</MenuItem></Link>
             </Drawer>
         </div>)
     }

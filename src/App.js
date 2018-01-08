@@ -18,6 +18,8 @@ import SignOut from './components/SignOut/SignOut'
 import Register from './components/Register/Register'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 import Profile from './components/Profile/Profile'
+import TodoList from './components/TodoList/TodoList'
+import Weather from './components/Weather/Weather'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AccountInformation from './components/AccountInformation/AccountInformation'
@@ -41,8 +43,8 @@ class App extends Component {
             <Provider store={store}>
                 <Router>
                     <MuiThemeProvider theme={theme}>
+                        <Header/>
                         <div className="App">
-                            <Header/>
                             <Switch>
                                 <Route path="/about" component={About}/>
                                 <Route path="/" exact component={Landing}/>
@@ -50,6 +52,9 @@ class App extends Component {
                                 <Route path="/register" component={Register}/>
                                 <Route path="/signin" component={SignIn}/>
                                 <Route path="/signout" component={SignOut}/>
+                                <Route path="/list" component={TodoList}/>
+                                <Route exact path="/weather" component={Weather}/>
+                                <Route path="/weather/:city" component={Weather}/>
                                 <AuthenticatedRoute path="/account-information" component={AccountInformation}/>
                                 <Route component={PageNotFound}/>
                             </Switch>

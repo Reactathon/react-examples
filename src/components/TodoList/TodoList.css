@@ -1,0 +1,11 @@
+.container {
+    width: 500px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+}

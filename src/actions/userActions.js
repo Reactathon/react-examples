@@ -31,3 +31,4 @@ export const logout = () => {
     // In a real application this would hit the logout of the server but since this just for demo just update the store
     return setUser({isAuthenticated: false})
 }
+

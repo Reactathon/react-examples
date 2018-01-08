@@ -1,0 +1,3 @@
+export const SET_CITY = 'SET_CITY'
+export const SET_CURRENT_WEATHER = 'SET_CURRENT_WEATHER'
+export const SET_FORECAST = 'SET_FORECAST'
